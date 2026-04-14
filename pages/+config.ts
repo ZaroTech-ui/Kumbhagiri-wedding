@@ -6,8 +6,8 @@ import vikeReact from "vike-react/config";
 
 const config: Config = {
   // https://vike.dev/head-tags
-  title: "My Vike App",
-  description: "Demo showcasing Vike",
+  title: "Mohan Krishna & Anusha Wedding | 25 April 2026",
+  description: "Join us in celebrating the sacred union of Mohan Krishna and Anusha on 25 April 2026 at Bhimavaram Village. A royal South Indian Telugu wedding celebration.",
 
   extends: [vikeReact],
 };
