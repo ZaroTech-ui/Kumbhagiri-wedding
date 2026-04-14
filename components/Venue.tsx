@@ -1,4 +1,9 @@
 export default function Venue() {
+  const handleMapClick = () => {
+    // Pause the wedding music when opening Google Maps
+    window.dispatchEvent(new Event('pauseWeddingMusic'));
+  };
+
   return (
     <section id="venue" className="relative py-24 bg-[#0a0406] overflow-hidden">
       {/* Parallax background */}
@@ -58,6 +63,7 @@ export default function Venue() {
               href="https://www.google.com/maps?q=14.713333,79.403417"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={handleMapClick}
               className="inline-block px-9 py-3.5 bg-gradient-to-br from-gold to-gold-mid text-maroon font-bold text-sm tracking-[0.15em] uppercase rounded shadow-[0_4px_20px_rgba(212,175,55,0.3)] hover:from-gold-light hover:to-gold hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(212,175,55,0.5)] transition-all duration-300"
             >
               Get Directions 📍
@@ -69,6 +75,7 @@ export default function Venue() {
             href="https://www.google.com/maps?q=14.713333,79.403417"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={handleMapClick}
             className="relative aspect-[4/3] bg-gradient-to-br from-maroon via-[#2a0a12] to-[#1a0508] rounded border border-gold/30 shadow-[0_8px_40px_rgba(0,0,0,0.6)] flex items-center justify-center overflow-hidden hover:border-gold/50 transition-all duration-300 cursor-pointer group"
           >
             {/* Grid overlay */}

@@ -46,6 +46,16 @@ export default function AudioPlayer() {
     document.addEventListener('touchstart', playOnInteraction, { once: true });
     document.addEventListener('scroll', playOnInteraction, { once: true });
 
+    // Listen for custom event to pause music (e.g., when opening Google Maps)
+    const handlePauseMusic = () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        setIsPlaying(false);
+      }
+    };
+
+    window.addEventListener('pauseWeddingMusic', handlePauseMusic);
+
     // Cleanup function - stops music when component unmounts or page closes
     return () => {
       if (audioRef.current) {
@@ -56,6 +66,7 @@ export default function AudioPlayer() {
       document.removeEventListener('click', playOnInteraction);
       document.removeEventListener('touchstart', playOnInteraction);
       document.removeEventListener('scroll', playOnInteraction);
+      window.removeEventListener('pauseWeddingMusic', handlePauseMusic);
     };
   }, []);
 
