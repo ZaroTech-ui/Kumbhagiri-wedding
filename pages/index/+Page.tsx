@@ -6,7 +6,6 @@ import Story from '../../components/Story';
 import Events from '../../components/Events';
 import Venue from '../../components/Venue';
 import Family from '../../components/Family';
-import Gallery from '../../components/Gallery';
 import RSVP from '../../components/RSVP';
 import Footer from '../../components/Footer';
 import PetalCanvas from '../../components/PetalCanvas';
@@ -32,7 +31,6 @@ export default function Page() {
       <Events />
       <Venue />
       <Family />
-      <Gallery />
       <RSVP />
       <Footer />
     </>

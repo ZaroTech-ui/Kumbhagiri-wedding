@@ -1,4 +1,9 @@
 export default function Footer() {
+  const handleExternalLinkClick = () => {
+    // Pause the wedding music when opening external links (WhatsApp, Email)
+    window.dispatchEvent(new Event('pauseWeddingMusic'));
+  };
+
   return (
     <footer className="relative bg-[#080305] py-16 px-4 text-center border-t border-gold/10">
       <div className="flex items-center justify-center gap-4 text-2xl mb-6 opacity-60">
@@ -32,6 +37,7 @@ export default function Footer() {
           <h3 className="font-display text-2xl text-gold-light mb-2">Zaro Tech</h3>
           <a 
             href="mailto:contactzarotech@gmail.com" 
+            onClick={handleExternalLinkClick}
             className="text-sm text-ivory/60 hover:text-gold transition-colors inline-flex items-center gap-2"
           >
             <span>✉️</span>
@@ -43,11 +49,12 @@ export default function Footer() {
           {/* Developer 1 */}
           <div className="bg-white/5 border border-gold/20 p-4 hover:border-gold/40 transition-all">
             <p className="text-xs tracking-[0.15em] uppercase text-gold/70 mb-2">Developer</p>
-            <h4 className="font-display text-lg text-ivory mb-2">Anil Kancharla</h4>
+            <h4 className="font-display text-lg text-ivory mb-2">Anil</h4>
             <a 
               href="https://wa.me/917675957378" 
               target="_blank" 
               rel="noopener noreferrer"
+              onClick={handleExternalLinkClick}
               className="inline-flex items-center gap-2 text-sm text-[#25D366] hover:text-[#1ebe5d] transition-colors"
             >
               <span>💬</span>
@@ -58,11 +65,12 @@ export default function Footer() {
           {/* Developer 2 */}
           <div className="bg-white/5 border border-gold/20 p-4 hover:border-gold/40 transition-all">
             <p className="text-xs tracking-[0.15em] uppercase text-gold/70 mb-2">Developer</p>
-            <h4 className="font-display text-lg text-ivory mb-2">Siddhartha Mamuduru</h4>
+            <h4 className="font-display text-lg text-ivory mb-2">Siddhartha</h4>
             <a 
               href="https://wa.me/917997793530" 
               target="_blank" 
               rel="noopener noreferrer"
+              onClick={handleExternalLinkClick}
               className="inline-flex items-center gap-2 text-sm text-[#25D366] hover:text-[#1ebe5d] transition-colors"
             >
               <span>💬</span>

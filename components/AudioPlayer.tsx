@@ -46,7 +46,7 @@ export default function AudioPlayer() {
     document.addEventListener('touchstart', playOnInteraction, { once: true });
     document.addEventListener('scroll', playOnInteraction, { once: true });
 
-    // Listen for custom event to pause music (e.g., when opening Google Maps)
+    // Listen for custom event to pause music (e.g., when opening Google Maps or WhatsApp)
     const handlePauseMusic = () => {
       if (audioRef.current) {
         audioRef.current.pause();
@@ -54,7 +54,30 @@ export default function AudioPlayer() {
       }
     };
 
+    // Listen for page visibility changes (when user comes back to the tab)
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        // User left the page - pause music
+        if (audioRef.current && !audioRef.current.paused) {
+          audioRef.current.pause();
+        }
+      } else {
+        // User came back to the page - resume music
+        if (audioRef.current && audioRef.current.paused) {
+          audioRef.current.play()
+            .then(() => {
+              setIsPlaying(true);
+              setShowPlayButton(false);
+            })
+            .catch(() => {
+              setShowPlayButton(true);
+            });
+        }
+      }
+    };
+
     window.addEventListener('pauseWeddingMusic', handlePauseMusic);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
 
     // Cleanup function - stops music when component unmounts or page closes
     return () => {
@@ -67,6 +90,7 @@ export default function AudioPlayer() {
       document.removeEventListener('touchstart', playOnInteraction);
       document.removeEventListener('scroll', playOnInteraction);
       window.removeEventListener('pauseWeddingMusic', handlePauseMusic);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
   }, []);
 

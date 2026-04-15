@@ -16,7 +16,6 @@ export default function Navbar() {
     { href: '#events', label: 'Events' },
     { href: '#venue', label: 'Venue' },
     { href: '#family', label: 'Family' },
-    { href: '#gallery', label: 'Gallery' },
     { href: '#rsvp', label: 'RSVP' },
   ];
 

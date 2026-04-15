@@ -20,6 +20,9 @@ export default function RSVP() {
   };
 
   const handleWhatsApp = () => {
+    // Pause music when opening WhatsApp
+    window.dispatchEvent(new Event('pauseWeddingMusic'));
+    
     const text = encodeURIComponent(
       `🙏 *Wedding RSVP — Mohan Krishna & Anusha*\n\n` +
       `📛 Name: ${formData.name || '[Your Name]'}\n` +
@@ -215,7 +218,10 @@ export default function RSVP() {
                   📤 Share Invitation
                 </button>
                 <button
-                  onClick={() => window.open(`https://wa.me/917702553877?text=${encodeURIComponent('🌸 You are invited to the wedding of Mohan Krishna & Anusha on 25 April 2026 at Bhimavaram Village! 🪔\n' + window.location.href)}`, '_blank')}
+                  onClick={() => {
+                    window.dispatchEvent(new Event('pauseWeddingMusic'));
+                    window.open(`https://wa.me/917702553877?text=${encodeURIComponent('🌸 You are invited to the wedding of Mohan Krishna & Anusha on 25 April 2026 at Bhimavaram Village! 🪔\n' + window.location.href)}`, '_blank');
+                  }}
                   className="w-full px-6 py-3 bg-[#25D366] text-white text-sm tracking-[0.1em] uppercase rounded hover:bg-[#1ebe5d] hover:-translate-y-0.5 hover:shadow-[0_4px_15px_rgba(37,211,102,0.3)] transition-all duration-300"
                 >
                   💬 Share on WhatsApp
