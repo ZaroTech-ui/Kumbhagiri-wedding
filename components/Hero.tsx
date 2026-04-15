@@ -59,7 +59,7 @@ export default function Hero() {
         {/* Names */}
         <div className="mb-6 opacity-0 animate-fadeInUp" style={{ animationDelay: '0.4s' }}>
           <h1 className="font-display text-5xl md:text-7xl font-bold leading-tight text-gradient-gold animate-shimmer">
-            Mohan Krishna <span className="font-display text-4xl md:text-5xl text-gold-mid opacity-90 italic">weds</span> Anusha
+            Mohan Krishna <span className="font-display text-4xl md:text-6xl text-gold-mid opacity-80">&</span> Anusha
           </h1>
         </div>
 
