@@ -58,16 +58,8 @@ export default function Hero() {
 
         {/* Names */}
         <div className="mb-6 opacity-0 animate-fadeInUp" style={{ animationDelay: '0.4s' }}>
-          <h1 className="font-display text-6xl md:text-8xl font-bold leading-tight text-gradient-gold animate-shimmer mb-2">
-            Mohan Krishna
-          </h1>
-          <div className="flex items-center justify-center gap-4 my-2">
-            <div className="h-px flex-1 max-w-[120px] bg-gradient-to-r from-transparent to-gold" />
-            <span className="font-display text-4xl md:text-6xl text-gold-mid opacity-80">&</span>
-            <div className="h-px flex-1 max-w-[120px] bg-gradient-to-l from-transparent to-gold" />
-          </div>
-          <h1 className="font-display text-6xl md:text-8xl font-bold leading-tight text-gradient-gold animate-shimmer">
-            Anusha
+          <h1 className="font-display text-5xl md:text-7xl font-bold leading-tight text-gradient-gold animate-shimmer">
+            Mohan Krishna <span className="font-display text-4xl md:text-5xl text-gold-mid opacity-90 italic">weds</span> Anusha
           </h1>
         </div>
 
